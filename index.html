@@ -11,17 +11,19 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #ff69b4, #ff1493, #ff69b4, #e73c7e);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-            overflow: hidden;
-            position: relative;
+body {
+  min-height: 100vh;
+  min-height: 100dvh; /* Adapts automatically to Safari address bar */
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent; /* Prevents blue highlight box on tap */
+}
+
+.card-container, .screen {
+  width: 100%;
+  max-width: 420px;
+  /* Prevent touch delay and accidental zoom on iOS */
+  touch-action: manipulation; 
+}
         }
 
         @keyframes gradientShift {
